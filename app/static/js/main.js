@@ -1,6 +1,6 @@
 class NLPWebClient {
     constructor() {
-        this.baseUrl = 'http://localhost:8000';
+        this.baseUrl = window.location.origin;
         this.currentMethod = 'tf-idf';
         this.sampleTexts = [
             "FastAPI is a modern web framework for Python.",
@@ -10,6 +10,7 @@ class NLPWebClient {
             "Neural networks show excellent results in NLP tasks"
         ];
 
+        console.log('API Base URL:', this.baseUrl);
         this.initEventListeners();
         this.checkServerStatus();
     }
