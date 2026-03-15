@@ -1,3 +1,29 @@
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+.lm_venv/
+ENV/
+env.bak/
+venv.bak/
+pythonenv*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Project
+nltk_data/
+*.log
 .DS_Store
-.lm_venv
+
+# Distribution
+dist/
+build/
+*.egg-info/

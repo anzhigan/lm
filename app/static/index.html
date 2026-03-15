@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP Processing</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Сайдбар с методами -->
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-brain"></i> NLP
+            </div>
+
+            <div class="methods-section">
+                <h3>Векторизация</h3>
+                <div class="methods-grid">
+                    <button class="method-btn active" data-method="tf-idf">Tf-idf</button>
+                    <button class="method-btn" data-method="bag-of-words">Bow</button>
+                    <button class="method-btn" data-method="lsa">LSA</button>
+                    <button class="method-btn" data-method="word2vec">W2V</button>
+                </div>
+            </div>
+
+            <div class="methods-section">
+                <h3>NLTK</h3>
+                <div class="methods-grid">
+                    <button class="method-btn" data-method="tokenize">Tokenize</button>
+                    <button class="method-btn" data-method="stem">Stem</button>
+                    <button class="method-btn" data-method="lemmatize">Lemmatize</button>
+                    <button class="method-btn" data-method="pos">POS</button>
+                    <button class="method-btn" data-method="ner">NER</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Основной контент -->
+        <div class="main-content">
+            <!-- Поле ввода -->
+            <div class="input-section">
+                <textarea id="inputText" placeholder="Введите текст.."></textarea>
+
+                <div class="sample-texts">
+                    <button class="sample-btn" data-index="0">FastAPI</button>
+                    <button class="sample-btn" data-index="1">Machine Learning</button>
+                    <button class="sample-btn" data-index="2">NLP</button>
+                    <button class="sample-btn" data-index="3">Python</button>
+                    <button class="sample-btn" data-index="4">Neural Networks</button>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="primary-btn" id="processBtn">
+                        <i class="fas fa-play"></i> Process
+                    </button>
+                    <button class="secondary-btn" id="clearInputBtn">
+                        <i class="fas fa-eraser"></i> Clear
+                    </button>
+                </div>
+            </div>
+
+            <!-- Результат -->
+            <div class="output-section">
+                <div class="output-header">
+                    <h2><i class="fas fa-code"></i> Result</h2>
+                    <button class="clear-btn" id="clearBtn">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+                </div>
+
+                <div id="errorMessage" class="error-message"></div>
+                <div id="successMessage" class="success-message"></div>
+
+                <div id="loading" class="loading">
+                    <div class="loader"></div>
+                    <p>Processing...</p>
+                </div>
+
+                <pre id="output" class="output-container">// Result will appear here</pre>
+            </div>
+        </div>
+
+        <!-- Статус бар -->
+        <div class="status-bar">
+            <div class="status-indicator">
+                <span class="status-dot" id="statusDot"></span>
+                <span id="statusMessage">Checking server...</span>
+            </div>
+            <div class="api-info">
+                <i class="fas fa-plug"></i> localhost:8000
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
